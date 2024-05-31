@@ -7,6 +7,8 @@ const julianobis = [31 , 29, 31, 30, 31, 30, 31, 31];
 
 const transicion = [31, 15, 31, 30, 31, 30, 31, 31];
 
+const mes = 9;
+
 let day = juliano.reduce((total, value) => total + value);
 // console.log(day);
 
@@ -26,21 +28,21 @@ let dayProgTr = 256 - dayTr;
 
 if ( year < 2018 && year % 4 != 0 ) {
 
-    console.log( 'dayProg' + '.' + '09' + '.' + 'year');
+    console.log( dayProg + '.' + 0 + mes + '.' + year);
 }
 else if ( year < 2018 && year % 4 == 0 ) {
 
-    console.log( 'dayProg2' + '.' + '09' + '.' + 'year');
+    console.log( dayProg2 + '.' + 0 + mes + '.' + year);
 }
 else if ( year == 2018 ) {
 
-    console.log( 'dayProgTr' + '.' + '09' + '.' + 'year');
+    console.log( dayProgTr + '.' + 0 + mes + '.' + year);
 }
 else if ( year > 2018 && year % 4 != 0 ) {
 
-    console.log( 'dayProg' + '.' + '09' + '.' + 'year');
+    console.log( dayProg + '.' + 0 + mes + '.' + year);
 }
 else if ( year > 2018 && year % 4 == 0 && year % 400 == 0 && year % 100 != 0 ) {
 
-    console.log( 'dayProg2' + '.' + '09' + '.' + 'year');
+    console.log( dayProg2 + '.' + 0 + mes + '.' + year);
 }
