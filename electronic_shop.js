@@ -1,29 +1,34 @@
-let b = 10;
 
-const keyboard = [3, 1];
-const drives = [5, 2, 8];
 
 const buy = [];
 
-keyboard.forEach( (el) => {
-    // console.log(el);
+keyboards.forEach( el => {
 
     const tempt = [];
 
     drives.forEach( (el2) => {
-        // console.log(el2)
 
         if ( el + el2 < b ) {
 
             tempt.push(el+el2);
         }
     })
-    console.log(tempt)
+    
     buy.push(tempt);
 });
 
-const solution = buy.flat();
-// console.log(solution);
-// return Math.max.apply(null, solution);
+const result = buy.flat();
 
-console.log(Math.max.apply(null, solution))
+let solution;
+
+if (result.find(value => value <= b != 0) ) {
+
+    solution = Math.max.apply(null, result);
+}
+else {
+    solution = -1;
+}
+
+return solution;
+
+
