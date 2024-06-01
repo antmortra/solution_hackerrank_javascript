@@ -1,6 +1,4 @@
 
-let year = 1918;
-
 const juliano = [31 , 28, 31, 30, 31, 30, 31, 31];
 
 const julianobis = [31 , 29, 31, 30, 31, 30, 31, 31];
