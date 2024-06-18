@@ -4,47 +4,25 @@ const player = [70, 80, 105];
 
 const simpleRanked = [];
 
-console.log(simpleRanked);
-
-const solution = [];
-
+// primero eliminamos los duplicados de la lista de ranking
 for ( let i = 0; i < ranked.length; i++) {
 
     if (ranked[i] > ranked[i+1] || [i+1] == ranked.length) {
         simpleRanked.push(ranked[i])
     }  
 }
-console.log(simpleRanked);
 
-for( let i = 0; i < player.length; i++) {
+const solution = [];
 
-    if( player[i] < simpleRanked[simpleRanked.length - 1]) {
+let j = simpleRanked.length - 1;
 
-        solution.push(simpleRanked.length + 1)
+// vamos comparando resultados sin tener que reiniciar desde el principio para ser mas eficiente.
 
-        simpleRanked.push(player[i]);
-
-        i++;
+for (let i = 0; i < player.length; i++) {
+    while (j >= 0 && player[i] >= simpleRanked[j]) {
+        j--;
     }
-    if ( player[i] >= simpleRanked[0]) { 
-
-        solution.push(1);
-
-        if ( player[i] > simpleRanked[0]) {
-
-            simpleRanked.unshift(player[i])
-        }
-    }
-    else {
-        for( let j = simpleRanked.length - 1; j >= 0; j--) {
-
-            if ( player[i] >= simpleRanked[j] && simpleRanked[j - 1] > player[i]) {
-
-                solution.push(j + 1);
-            }
-            
-        }
-    }
+    solution.push(j + 2);
 }
 
 return solution;
