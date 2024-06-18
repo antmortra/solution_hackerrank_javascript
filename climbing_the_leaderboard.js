@@ -18,16 +18,32 @@ console.log(simpleRanked);
 
 for( let i = 0; i < player.length; i++) {
 
-    if( simpleRanked.includes(player[i]) == false) {
+    if( player[i] < simpleRanked[simpleRanked.length - 1]) {
 
-    simpleRanked.push(player[i]);
+        solution.push(simpleRanked.length + 1)
 
-    simpleRanked.sort((a,b)=>b-a);
+        simpleRanked.push(player[i]);
 
-    solution.push((simpleRanked.indexOf(player[i])) + 1);
+        i++;
+    }
+    if ( player[i] >= simpleRanked[0]) { 
+
+        solution.push(1);
+
+        if ( player[i] > simpleRanked[0]) {
+
+            simpleRanked.unshift(player[i])
+        }
     }
     else {
-        solution.push((simpleRanked.indexOf(player[i])) + 1);   
+        for( let j = simpleRanked.length - 1; j >= 0; j--) {
+
+            if ( player[i] >= simpleRanked[j] && simpleRanked[j - 1] > player[i]) {
+
+                solution.push(j + 1);
+            }
+            
+        }
     }
 }
 
