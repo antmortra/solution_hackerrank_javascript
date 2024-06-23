@@ -4,8 +4,6 @@ const c = [0, 0, 1, 0, 0, 1, 1, 0];
 
 let k = 2;
 
-let jumps = 0;
-
 for ( let i = 0; i < c.length; i = i + k) {
 
     if ( c.length - ( i + k ) != 0 ) {
